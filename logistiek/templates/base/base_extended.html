@@ -1,0 +1,47 @@
+{% extends "base/base.html" %}
+
+<!-- Construct headerbar -->
+{% block logo %}
+<img class="h-50 max-h-50 max-w-[175px] pl-1rem sm:mr-80 lg:pl-0 lg:max-w-[250px] xl:max-h-75" 
+     src="/base/static/images/AnalyzeLogo-1.svg" 
+     alt="Logo">
+{% endblock %}
+
+{% block nav %}
+    {{ super() }}
+    <ul class="navbar-nav lg:flex">
+        <li class="nav-item">
+            <a class="nav-link {%- if (request.path == '/' or request.path == '/home') %} active" aria-current="page" {% else %} " {% endif %} href="/">Home</a>
+        </li>    
+        <li class="nav-item">
+            <a class="nav-link {%- if request.path == '/twin' %} active" aria-current="page" {% else %} " {% endif %} href="{{ url_for('twin_holder') }}" >Digitale Tweeling</a>
+        </li>
+    </ul>
+{% endblock nav %}
+
+{% block footer %}
+    <div class="grid grid-cols-6 w-full px-20 py-40 md:px-40 lg:px-60 lg:max-w-80p">
+        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+            <h3 class="text-primary-lighter">Ga naar</h3>
+            <div class="pb-20">
+                <a class="hover:text-primary-lighter" href="/">Home</a><br>
+                <a class="hover:text-primary-lighter" href="/digitale_tweeling">Digitale Tweeling</a><br>
+            </div>
+        </div>
+        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+            <h3 class="text-primary-lighter">Contact</h3>
+            <div class="pb-20">
+                T: <a class="hover:text-primary-lighter" href="tel:+31703000684" aria-label="Telefoonnummer Analyze 070 &dash; 300 06 84">070 &dash; 300 06 84</a><br>
+                E: <a class="hover:text-primary-lighter" href="mailto:info@analyze.nl">info@analyze.nl</a>
+            </div>
+        </div>
+        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+            <h3 class="text-primary-lighter">Algemeen</h3>
+            <div class="pb-20">
+                <a class="hover:text-primary-lighter" href="#" target="_blank">Toegankelijkheidsverklaring</a><br>
+                <a class="hover:text-primary-lighter" href="#" target="_blank">Privacyverklaring</a><br>
+                <a class="hover:text-primary-lighter" href="#" target="_blank">Cookieverklaring</a>
+            </div>
+        </div>
+    </div>
+{% endblock footer %}

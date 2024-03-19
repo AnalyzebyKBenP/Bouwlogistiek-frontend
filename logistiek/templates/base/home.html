@@ -1,0 +1,72 @@
+{% extends "base/base_extended.html" %}
+
+{% block head %}
+    <title>Home - Digitale Tweeling</title>
+{% endblock %}
+
+{% block nav %}
+    {{ super() }}
+{% endblock nav %}
+
+{% block content %}
+
+<div class="flex flex-col items-center bg-gray-lightest w-full">
+    <picture class="w-full lg:max-w-80p">
+        <source class="w-full" srcset="{{url_for('static', filename='images/LuchtfotoUitgeest-medium.jpg')}}" media="(min-width: 0px) and (max-width: 767px)">
+        <img class="w-full" src="{{url_for('static', filename='images/LuchtfotoUitgeest-large.jpg')}}" alt="">
+    </picture>
+
+    <div class="w-full bg-white px-20 py-40 md:px-40 lg:px-60 lg:max-w-80p xl:py-60">
+
+        <div class="grid grid-cols-12">
+            <div class="col-span-12 mb-10 xl:mb-0 xxl:col-span-6 xxl:pr-60">
+                <h1>Digitale Tweeling</h1>
+                <p>
+                    De regio Alkmaar zet digitale techniek in voor een veilige, gezonde, duurzame en democratische leefomgeving. Een stevige ambitie die we in kleine stapjes waar maken. 
+                    We ontwikkelen een Digitale Tweeling van de regio. In de Digitale Tweeling kan je op termijn interactief en realtime een deel van de regionale plannen bekijken, 
+                    ervaren en erover meedenken. De eerste fase van de Digitale Tweeling is klaar en we delen deze graag met iedereen die daarin geïnteresseerd is. 
+                </p>
+                <p>
+                    Ontdek de mogelijkheden van de Digitale Tweeling door in de viewer de regio van alle kanten te bekijken. De Digitale Tweeling maakt verschillende thema's als mobiliteit, klimaat en 
+                    sociale faciliteiten visueel inzichtelijk. Zoom bijvoorbeeld eens in op je eigen straat. En kijk eens naar de verkeersdoorstroom op dit moment. Die laatste gegevens worden realtime doorgegeven. 
+                </p>
+
+                <p>Deze eerste versie van de Digitale Tweeling roept wellicht vragen op. Kijk bij de  voor de antwoorden. <br>
+                Bekijk ook <a href="https://youtu.be/rh3MMvLMqH4" target="_blank">dit instructiefilmpje</a>. Veel kijkplezier!</p>
+
+                <p>De kaart is het beste te bekijken op een groot scherm.</p>
+
+                <a class="btn mt-20 mb-30" href="{{ url_for('twin_holder') }}">Naar Digitale Tweeling</a>
+            </div>
+
+            <div class="col-span-12 mb-40 pt-8 xxl:col-span-6">
+                <h4>Over</h4>
+                <p>Wil je meedenken over het ontwikkelen van de Digitale Tweeling, neem dan </p>
+                <p>Wil je meer weten over de regio Alkmaar en haar visie en thema's, kijk dan op onze website:</p>
+                <a class="btn mt-20 mb-30" href="https://regioalkmaar.nl">regioalkmaar.nl</a>
+
+                <div class="grid grid-cols-12 mb-40 gap-10">
+                    <img class="w-full border border-solid border-gray-border col-span-6 lg:col-span-3 xxl:col-span-6 wide:col-span-3" 
+                        alt="Homepage afbeelding 1" 
+                        src="{{url_for('base.static', filename='images/placeholders/home-l-1.jpg')}}">
+                    <img class="w-full border border-solid border-gray-border col-span-6 lg:col-span-3 xxl:col-span-6 wide:col-span-3" 
+                        alt="Homepage afbeelding 2" 
+                        src="{{url_for('base.static', filename='images/placeholders/home-l-2.jpg')}}">
+                    <img class="w-full border border-solid border-gray-border col-span-6 lg:col-span-3 xxl:col-span-6 wide:col-span-3" 
+                        alt="Homepage afbeelding 3" 
+                        src="{{url_for('base.static', filename='images/placeholders/home-l-3.jpg')}}">
+                    <img class="w-full border border-solid border-gray-border col-span-6 lg:col-span-3 xxl:col-span-6 wide:col-span-3" 
+                        alt="Homepage afbeelding 4" 
+                        src="{{url_for('base.static', filename='images/placeholders/home-l-4.jpg')}}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+{% endblock %}

@@ -1,0 +1,82 @@
+<div id="layer-panel" class="layerPanel map-panel absolute w-full h-full lg:top-40" style="display: block;">
+    <div class="lg:w-full lg:overflow-y-auto lg:px-30 lg:pt-30 lg:pb-15 lg:h-[calc(100%_-_120px)]">
+        <h3 class="legend-title hidden lg:visible lg:block">Kaartlagen</h3>
+        <p>Selecteer welke kaartlagen zichtbaar zijn. Wanneer een kaartlaag wordt ingeschakeld kan het even duren voor deze weer zichtbaar is.</p>
+        <table class="w-full">
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" checked="true" id="gemeentes_button" name="gemeentes_button" onchange="toggle_layer_municipality()">
+                    </td>
+                    <td>
+                        <label for="gemeentes_button">Gemeentes (na aanklikken plangebied)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" checked="true" id="borden_button" name="borden_button" onchange="toggle_layer(map.layers.getLayerById('borden_direction')), toggle_layer(map.layers.getLayerById('borden'))">
+                    </td>
+                    <td>
+                        <label for="borden_button">Verkeersborden</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" checked="true" id="kwetsbare_wegdelen_button" name="kwetsbare_wegdelen_button" onchange="toggle_layer(map.layers.getLayerById('kwetsbarewegdelen'))">
+                    </td>
+                    <td>
+                        <label for="kwetsbare_wegdelen_button">Kwetsbare wegdelen</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" checked="true" id="kwetsbare_objecten_button" name="kwetsbare_objecten_button" onchange="toggle_layer(map.layers.getLayerById('kwetsbareobjecten'))">
+                    </td>
+                    <td>
+                        <label for="kwetsbare_objecten_button">Kwetsbare objecten (RIVM)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="doorfietsroutes_button" name="doorfietsroutes_button" onchange="toggle_layer(map.layers.getLayerById('doorfietsroutes'))">
+                    </td>
+                    <td>
+                        <label for="doorfietsroutes_button">Doorfietsroutes</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="wegwerkzaamheden_button" name="wegwerkzaamheden_button" onchange="toggle_layer(map.layers.getLayerById('wegwerkzaamheden'))">
+                    </td>
+                    <td>
+                        <label for="wegwerkzaamheden_button">Wegwerkzaamheden (Melvin)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="hubs_button" name="hubs_button" onchange="toggle_layer(map.layers.getLayerById('hubs'))">
+                    </td>
+                    <td>
+                        <label for="hubs_button">Logistieke Hubs</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="vaarwegen_button" name="vaarwegen_button" onchange="toggle_layer(map.layers.getLayerById('vaarwegen'))">
+                    </td>
+                    <td>
+                        <label for="vaarwegen">Vaarwegen</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="overslagpunten_button" name="overslagpunten_button" onchange="toggle_layer(map.layers.getLayerById('overslagpunten'))">
+                    </td>
+                    <td>
+                        <label for="overslagpunten">Overslagpunten</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

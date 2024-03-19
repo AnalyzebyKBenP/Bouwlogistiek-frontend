@@ -1,0 +1,32 @@
+#scenario-panel {
+    box-shadow: 1px 1px 10px #a7a7a7;
+}
+
+#scenario-panel.active-panel {
+    @apply max-w-[calc(100%_-_10px)];
+    transition: max-width 0.3s ease-in;
+}
+
+#scenario-panel.active-scenarios {
+    @apply translate-y-0 transition-all duration-300
+}
+
+.toggle-container.active > .dropdown-btn {
+    @apply text-[#3a7db2] font-bold transition-all duration-300
+}
+
+.btn.scenario-btn:hover, .btn.scenario-btn.activebtn {
+    @apply bg-primary;
+}
+
+.btn.scenario-btn:hover, .btn.scenario-btn.activebtn {
+    @apply bg-primary;
+}
+
+.btn.scenario-btn:disabled:hover {
+    @apply bg-primary-lighter;
+}
+
+.btn.scenario-btn:disabled {
+    @apply opacity-35 cursor-default;
+}
