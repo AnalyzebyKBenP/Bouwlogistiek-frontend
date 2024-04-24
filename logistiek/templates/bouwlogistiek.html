@@ -1,4 +1,4 @@
-{% extends "base/atlas.html" %}
+{% extends "atlas/atlas.html" %}
 
 {# block search #}
     {{ super() }}
@@ -39,6 +39,7 @@
     <script type="text/javascript">
         var AzureMapsClientId = '{{ AzureMapsClientId }}';
         var GeoserverNamespace = '{{ GeoserverNamespace }}';
+        var GeoserverAuth = '{{ GeoserverAuth }}';
         loadScript('spiderclusters');
     </script>
     <script src="{{url_for('static', filename='js/createMap.js')}}"></script>

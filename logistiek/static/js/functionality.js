@@ -8,7 +8,7 @@ client_smartcity_geoserver = new atlas.io.ogc.WfsClient({
         return {
             url: url,
             headers: {
-                Authorization: 'Basic UkRUX3Bhc3N3b3JkX2FjY2VzczpSbjVFQFloNkJVbyQkNw==',
+                Authorization: GeoserverAuth,
             }
         };
     },
@@ -89,13 +89,23 @@ function constructorToToggle(id,newFunc) {
 function loading_gif(loading){
     return new Promise(function(resolve, reject) {
         if (loading == true){
-            document.getElementById('loading_panel_id').style.display = "block"
+            document.getElementById('loading_panel_id').style.display = "block";
+            document.getElementById('active-layers').dataset.loading = 'true';
+            document.getElementById('active-layers-list').classList.add('opacity-30');
+            document.querySelector('#active-layers .loader-container').classList.remove('!hidden');
         }
         else{
-            document.getElementById('loading_panel_id').style.display = "none"
+            document.getElementById('loading_panel_id').style.display = "none";
+            document.getElementById('active-layers').dataset.loading = 'false';
+            document.getElementById('active-layers-list').classList.remove('opacity-30');
+            document.querySelector('#active-layers .loader-container').classList.add('!hidden');
         }
         resolve()
     })
+}
+
+function hide_loading_gif() {
+    document.getElementById('loading_panel_id').style.display = 'none';
 }
 
 function notification_popup(loading){

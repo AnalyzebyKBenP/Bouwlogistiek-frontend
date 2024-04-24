@@ -17,7 +17,7 @@ except:
 
 def create_app():
     app = Flask(__name__.split('.')[0])
-    app.secret_key = 'syCkA5D37ky8xFNqFbTe'
+    app.secret_key = 'jmbG463W2Nw56C3M6x5O'
 
     # Read .env vars
     AzureMapsClientId = environ.get('AzureMapsClientId')
@@ -53,6 +53,10 @@ def create_app():
     from shared.blueprints.proxy import proxy as proxy_blueprint
     app.register_blueprint(proxy_blueprint)
 
+    @app.errorhandler(404) 
+    def not_found(e):
+        return render_template("base/404.html")
+
     # blueprint for proxy parts of app
     from util.psql import psql as psql_blueprint
     app.register_blueprint(psql_blueprint,url_prefix='/psql')
@@ -60,7 +64,7 @@ def create_app():
     # Routes specific to this app
     @app.route('/twin')
     def twin_holder():
-        return render_template('bouwlogistiek.html', **current_app.config['vars_to_pages'], mapURL='/twin_map')
+        return render_template('bouwlogistiek.html', **current_app.config['vars_to_pages'], **current_app.config['vars_to_maps'], mapURL='/twin_map')
 
     if __name__ == "__main__":
         from wsgi import app

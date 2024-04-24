@@ -20,7 +20,7 @@ function GetMapLogistiek() {
                     return {
                         url: url,
                         headers: {
-                            Authorization: 'Basic UkRUX3Bhc3N3b3JkX2FjY2VzczpSbjVFQFloNkJVbyQkNw==',
+                            Authorization: GeoserverAuth,
                         }
                     };
                 } else {
